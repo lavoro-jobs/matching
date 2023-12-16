@@ -25,9 +25,9 @@ class MatchingService:
         channel.basic_ack(delivery_tag=method.delivery_tag)
         pass
 
-    def _save_match_to_db(self, applicant_profile_id, job_post_id, match_score):
+    def _save_match_to_db(self, applicant_account_id, job_post_id, match_score):
         if match_score > 0.1:
-            queries.create_match(applicant_profile_id, job_post_id, match_score)
+            queries.create_match(applicant_account_id, job_post_id, match_score)
 
 
 if __name__ == "__main__":
